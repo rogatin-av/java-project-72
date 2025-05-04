@@ -4,6 +4,7 @@ plugins {
     jacoco
     id("io.freefair.lombok") version "8.12.2.1"
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("org.sonarqube") version "6.0.1.5171"
 }
 
 group = "hexlet.code"
@@ -31,6 +32,14 @@ dependencies {
     testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
     testImplementation("org.apache.httpcomponents.client5:httpclient5:5.4.2")
     implementation("org.jsoup:jsoup:1.18.3")
+}
+
+sonar {
+  properties {
+    property("sonar.projectKey", "rogatin-av_java-project-72")
+    property("sonar.organization", "rogatin-av")
+    property("sonar.host.url", "https://sonarcloud.io")
+  }
 }
 
 application {
