@@ -1,14 +1,11 @@
-setup:
-	./gradlew wrapper
+run-dist:
+	./build/install/app/bin/app
+
+build:
+	./gradlew build
 
 clean:
 	./gradlew clean
-
-build:
-	./gradlew clean build
-
-install:
-	./gradlew clean install
 
 test:
 	./gradlew test
@@ -19,5 +16,21 @@ report:
 lint:
 	./gradlew checkstyleMain checkstyleTest
 
-check-deps:
-	./gradlew dependencyUpdates -Drevision=release
+sonar:
+	./gradlew build sonar --info
+
+start:
+	./gradlew run
+
+install:
+	./gradlew clean install
+
+setup:
+	./gradlew wrapper --gradle-version 8.5
+
+run:
+	./gradlew run
+
+build-run: build run
+
+.PHONY: build
