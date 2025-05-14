@@ -4,6 +4,6 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=rogatin-av_java-project-72&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=rogatin-av_java-project-72)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=rogatin-av_java-project-72&metric=coverage)](https://sonarcloud.io/summary/new_code?id=rogatin-av_java-project-72)
 
-### Page Analyzer
+### Page Analyzer >> [Render Link](https://java-project-72-xm0u.onrender.com/)
 
 A simple web application that checks websites for SEO readiness and availability.
