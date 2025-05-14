@@ -82,13 +82,13 @@ public final class AppTest {
             var httpResponse = client.post("/urls", requestBody);
             assertThat(httpResponse.code()).isEqualTo(HttpStatus.SC_OK);
             assertThat(httpResponse.body().string()).contains("https://www.example.com");
+            assertThat(UrlRepository.findName("https://www.example.com").isPresent()).isTrue();
         });
     }
 
     @Test
     void testViewUrlDetails() throws SQLException {
         Url createdUrl = new Url("https://www.google.com");
-        createdUrl.setCreatedAt(LocalDateTime.now());
         UrlRepository.save(createdUrl);
         JavalinTest.test(app, (server, client) -> {
             var httpResponse = client.get("/urls/" + createdUrl.getId());
